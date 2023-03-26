@@ -6,7 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post('notification')
-  sendEmail(@Body() body: any) {
+  sendEmail(@Body() body: { text: string }) {
     return this.appService.sendMail(body.text);
   }
 }
